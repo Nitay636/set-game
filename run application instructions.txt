@@ -1,0 +1,2 @@
+1. Open command line in the folder "Set", and run the next script: node server.js
+2. Go to the browser and seach for: http://localhost:3000/

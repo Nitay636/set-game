@@ -1,0 +1,458 @@
+*, *::before, *::after {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+html, body {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+
+	background-color: #ffdcff;
+
+	padding: 0;
+	margin: 0;
+
+	user-select: none;
+	overflow: hidden;
+}
+
+#title {
+	display: flex;
+	/*flex-direction: column;*/
+	align-items: center;
+	justify-content: center;
+	font-family: 'Monoton', cursive;
+	/*color: purple;*/
+	font-size: 5rem;
+	position: relative;
+	padding-top: 20px;
+}
+
+#not-title {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* ---------------------- buttons --------------------------- */
+.buttons {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	padding: 20px 50px;
+	font-size: 3rem;
+
+	background: #000;
+	color: #fff;
+
+	position: relative;
+	border-radius: 40px;
+	transition: transform 0.3s ease;
+}
+
+.buttons::after, .buttons::before {
+	content: "";
+	position: absolute;
+	opacity: 0.3;
+	background: #000;
+	border-radius: inherit;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+	transition: transform 0.3s ease;
+}
+.buttons:hover {
+	transform: translate(-16px, -16px);
+}
+
+.buttons:hover::after {
+	transform: translate(8px, 8px);
+}
+
+/*----------------------- homepage buttons --------------------------------*/
+#homepage {
+	display: flex;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	gap: 7rem;
+}
+
+.start-game-btn {
+	width: 100%;
+}
+
+/*----------------------- game board --------------------------------*/
+#game-board {
+	visibility: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	height: 100%;
+}
+
+#setsDisplayer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 2rem;
+}
+
+.game-data {
+	visibility: inherit;
+	position: relative;
+	font-size: 4rem;
+	text-align: center;
+	width: 25%;
+	z-index: 50;
+}
+
+#setsDisplayer {
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.game-data-title {
+	font-size: 6rem;
+}
+
+#game-cards {
+	visibility: inherit;
+	position: relative;
+	display: grid;
+}
+
+.card {
+	min-width: 90%;
+	cursor: pointer;
+	position: relative;
+	margin: 5px;
+	font-size: 5rem;
+	border: 0px solid green;
+	border-radius: 30px;
+	transition: transform 0.3s ease;
+	z-index: 15;
+	aspect-ratio: 9/10;
+}
+
+/*----------------------- Shapes --------------------------------*/
+.shapes {
+	position: relative;
+	height: 45%;
+	aspect-ratio: 67/100;
+}
+
+.borders {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0%;
+	left: 0%;
+	aspect-ratio: 67/100;
+}
+
+.wave-shape {
+  mask: url("shapes masks/wave.svg");
+  mask-size: cover;
+  -webkit-mask: url("shapes masks/wave.svg");
+  -webkit-mask-size: cover;
+}
+
+.wave-border {
+  mask: url("shapes masks/wave-border.svg");
+  mask-size: cover;
+  -webkit-mask: url("shapes masks/wave-border.svg");
+  -webkit-mask-size: cover;
+}
+
+.diamond-shape {
+  mask: url("shapes masks/diamond.svg");
+  mask-size: cover;
+  -webkit-mask: url("shapes masks/diamond.svg");
+  -webkit-mask-size: cover;
+  
+}
+
+.diamond-border {
+	mask: url("shapes masks/diamond-border.svg");
+  mask-size: cover;
+	-webkit-mask: url("shapes masks/diamond-border.svg");
+  -webkit-mask-size: cover;
+}
+
+.ellipse-shape {
+  mask: url("shapes masks/ellipse.svg");
+  mask-size: cover;
+  -webkit-mask: url("shapes masks/ellipse.svg");
+  -webkit-mask-size: cover;
+}
+
+.ellipse-border {
+	mask: url("shapes masks/ellipse-border.svg");
+  mask-size: cover;
+	-webkit-mask: url("shapes masks/ellipse-border.svg");
+  -webkit-mask-size: cover;
+}
+
+/*----------------------- game results --------------------------------*/
+#game-results {
+	visibility: hidden;
+	background-color: #c8dcfd;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	border-radius: 50px;
+	z-index: 100;
+}
+
+#back-to-homepage-btn {
+	/*height: 5rem;*/
+}
+
+/*----------------------- 2 players game --------------------------------*/
+#get-players-names-table {
+	visibility: hidden;
+	background-color: #c8dcfd;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	position: absolute;
+	border-radius: 50px;
+
+}
+
+.multiple-players-table-txt {
+	font-size: 3rem;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+}
+
+.multiple-players-table-input {
+	width: 70%;
+	font-size: 2.3rem;
+	text-align: center;
+	justify-content: center;
+	position: relative;
+
+	border: 0px solid grey;
+	border-radius: 10px;
+}
+
+.multiple-players-table-btn {
+	display: inline;
+}
+
+@keyframes players-names-table-in {
+	0% {left: -100%;}
+	100% {left: 25%;}
+}
+
+/* --------- Loading dots ---------- */
+#loading-dots {
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	width: 30rem;
+	height: 30rem;
+	visibility: hidden;
+}
+
+.loading-dot {
+	position: relative;
+	width: 4rem;
+	height: 4rem;
+	margin: 15px;
+	border-radius: 50px;
+	animation: moveLoadingDot 3s infinite linear;
+}
+
+@keyframes moveLoadingDot {
+	/* The data is calculated with sin function */
+	0% {top: 0px}
+	5% {top: -31x}
+	10% {top: -59px}
+	15% {top: -81px}
+	20% {top: -95px}
+	25% {top: -100px}
+	30% {top: -95px}
+	35% {top: -81px}
+	40% {top: -59px}
+	45% {top: -31px}
+	50% {top: 0px}
+	55% {top: 31x}
+	60% {top: 59px}
+	65% {top: 81px}
+	70% {top: 95px}
+	75% {top: 100px}
+	80% {top: 95px}
+	85% {top: 81px}
+	90% {top: 59px}
+	95% {top: 31px}
+	100% {top: 0px}
+}
+
+#loading-dot1 {
+	background-color: red;
+}
+
+#loading-dot2 {
+	background-color: green;
+	animation-delay: 0.2s;
+}
+
+#loading-dot3 {
+	background-color: purple;
+	animation-delay: 0.4s;
+}
+
+/* ------------- Resize to different devices -------------------- */
+/* ------------- Resize desktops -------------- */
+@media (min-width:  1201px) {
+	#title {
+		height: 15vh;
+	}
+
+	#not-title {
+		height: 85vh;
+	}
+
+	#homepage {
+		flex-direction: row;
+		width: 70%;
+	}
+
+	#get-players-names-table {
+	gap: 1rem;
+	width: 50%;
+	height: 90%;
+	}
+	
+	#game-board {
+	flex-direction: row;
+	width: 100%;
+	}
+
+	#game-cards {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-gap: 0rem;
+		text-align: center;
+		align-items: center;
+		height: 90%;
+		width: 50%;
+	}
+
+	#game-results {
+	gap: 1.4rem;
+	width: 50%;
+	height: 90%;
+	font-size: 3rem;
+  }
+}
+
+/* ------------- Resize phones -------------- */
+@media (max-width:  1200px) {
+	#title {
+		height: 10vh;
+		font-size: 3.5rem;
+	}
+
+	#not-title {
+		height: 90vh;
+	}
+
+	.buttons {
+		font-size: 1.5rem;
+	}
+
+	#homepage {
+		flex-direction: column;
+		width: 80%;
+	}
+
+	#get-players-names-table {
+	gap: 0.5rem;
+	width: 90%;
+	height: 80%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	}
+
+	.multiple-players-table-txt {
+	font-size: 1.5rem;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	}
+
+	.multiple-players-table-input {
+	width: 80%;
+	font-size: 1.6rem;
+	text-align: center;
+
+	border: 0px solid grey;
+	border-radius: 10px;
+	}
+
+	.game-data-title {
+		font-size: 2.2rem;
+	}
+
+	.game-data {
+		font-size: 1.5rem;
+		height: 20%;
+	}
+
+	#game-board {
+		flex-direction: column;
+		width: 90vh;
+	}
+
+	#setsDisplayer {
+		grid-gap: 0.5rem;
+	}
+
+	#game-cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-gap: 0.7rem;
+		height: 60%;
+		width: 100%;
+	}
+
+	.card {
+	border-radius: 20px;
+	}
+
+	.shapes {
+	width: 30%;
+	/* height: 60%; */
+	}
+
+	#game-results {
+		font-size: 3.2rem;
+		gap: 1.5rem;
+		width: 90%;
+		height: 80%;
+		border-radius: 25px;
+	}
+}

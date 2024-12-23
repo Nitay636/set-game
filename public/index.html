@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set game</title>
+
+  <!-- Importing fonts from fonts.google.com-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <!-- ---------------------------------------------- -->
+
+  <!-- Importing JQuery, socket.io, the css file, and the javascript files-->
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://cdn.socket.io/4.4.1/socket.io.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script defer src="style.js" type="text/javascript"></script>
+  <script defer src="script.js" type="text/javascript"></script>
+  
+  <!-- ---------------------------------------------- -->
+</head>
+<body>
+  <h1 id="title">
+    <span style="color:#800080">S</span>
+    <span style="color:#228B22">E</span>
+    <span style="color:#FF0000">T</span>
+  </h1>
+
+  <div id="not-title">
+    <!--------------- Start buttons ------------------->
+    <div id="homepage">  
+      <button id="start-btn1" class="start-game-btn buttons" onclick="startGame1()">One Player Game</button>
+      <button id="start-btn2" class="start-game-btn buttons" onclick="getPlayersNamesTable()">Two Players Game</button>
+    </div>
+
+    <!--------- get names in 2 players mode ------------->
+    <div id="get-players-names-table">
+      <div>
+        <h1 class="multiple-players-table-txt">Enter your name</h1>
+        <input type="text" placeholder="Your name" id="name-input" class="multiple-players-table-input">
+      </div>
+      <div>
+        <h1 class="multiple-players-table-txt">Enter your opponent's name</h1>
+        <input type="text" placeholder="Your opponent's name" id="opponent-name-input" class="multiple-players-table-input">
+      </div>
+      <div>
+        <button class="buttons multiple-players-table-btn" onclick="goToHomePage()">back</button>
+        <button class="buttons multiple-players-table-btn" onclick="startGame2()">Start Game</button>
+      </div>
+      
+    </div>
+
+    <!-------- loading dots on 2 players mode ---------->
+    <div id="loading-dots">
+      <span id="loading-dot1" class="loading-dot"></span>
+      <span id="loading-dot2" class="loading-dot"></span>
+      <span id="loading-dot3" class="loading-dot"></span>
+    </div>
+
+    <!-- All the data of the game, such as the cards, timers and number of sets -->
+    <div id="game-board">
+
+      <span id="setsCounter" class="game-data">
+        <div class="game-data-title">Sets</div>
+        <div id="setsDisplayer"></div>
+      </span>
+
+      <span id="game-cards">
+        <button id="card0" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card1" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card2" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card3" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card4" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card5" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card6" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card7" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card8" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card9" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card10" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+        <button id="card11" class="card" onclick="cardSelected(this.id)" style="display: flex; justify-content: center; align-items: center;"></button>
+      </span>
+      <span id="timeCounter" class="game-data">
+        <div class="game-data-title">Time</div>
+        <div>
+          <span id="minutesCounter" class="timeCounterChildren">00</span>
+          <span class="timeCounterChildren">:</span>
+          <span id="secondsCounter" class="timeCounterChildren">00</span>
+        </div>
+      </span>
+    </div>
+
+    <!--------------- game results table --------------->
+    <div id="game-results">
+        <button id="back-to-homepage-btn" class="buttons" onclick="goToHomePage()">Play Again</button>
+    </div>
+  </div>
+  
+</body>
+
+</html>

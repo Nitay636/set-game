@@ -1,0 +1,43 @@
+/* ------------- Resize desktops -------------- */
+@media (min-width:  1201px) {
+	#title {
+		height: 15vh;
+	}
+
+	#not-title {
+		height: 85vh;
+	}
+
+	#homepage {
+		flex-direction: row;
+		width: 70%;
+	}
+
+	#get-players-names-table {
+	gap: 1rem;
+	width: 50%;
+	height: 90%;
+	}
+	
+	#game-board {
+	flex-direction: row;
+	width: 100%;
+	}
+
+	#game-cards {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: repeat(3, 1fr);
+		grid-gap: 0rem;
+		text-align: center;
+		align-items: center;
+		height: 90%;
+		width: 50%;
+	}
+
+	#game-results {
+	gap: 1.4rem;
+	width: 50%;
+	height: 90%;
+	font-size: 3rem;
+  }
+}

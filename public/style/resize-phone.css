@@ -1,0 +1,88 @@
+/* ------------- Resize phones -------------- */
+@media (max-width:  1200px) {
+	#title {
+		height: 10vh;
+		font-size: 3.5rem;
+	}
+
+	#not-title {
+		height: 90vh;
+	}
+
+	.buttons {
+		font-size: 1.5rem;
+	}
+
+	#homepage {
+		flex-direction: column;
+		width: 80%;
+	}
+
+	#get-players-names-table {
+	gap: 0.5rem;
+	width: 90%;
+	height: 80%;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	}
+
+	.multiple-players-table-txt {
+	font-size: 1.5rem;
+	text-align: center;
+	position: relative;
+	margin-top: 30px;
+	}
+
+	.multiple-players-table-input {
+	width: 80%;
+	font-size: 1.6rem;
+	text-align: center;
+
+	border: 0px solid grey;
+	border-radius: 10px;
+	}
+
+	.game-data-title {
+		font-size: 2.2rem;
+	}
+
+	.game-data {
+		font-size: 1.5rem;
+		height: 20%;
+	}
+
+	#game-board {
+		flex-direction: column;
+		width: 90vh;
+	}
+
+	#setsDisplayer {
+		grid-gap: 0.5rem;
+	}
+
+	#game-cards {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(4, 1fr);
+		grid-gap: 0.7rem;
+		height: 60%;
+		width: 100%;
+	}
+
+	.card {
+	border-radius: 20px;
+	}
+
+	.shapes {
+	width: 30%;
+	/* height: 60%; */
+	}
+
+	#game-results {
+		font-size: 3.2rem;
+		gap: 1.5rem;
+		width: 90%;
+		height: 80%;
+		border-radius: 25px;
+	}
+}

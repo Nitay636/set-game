@@ -160,45 +160,45 @@ html, body {
 }
 
 .wave-shape {
-  mask: url("shapes masks/wave.svg");
+  mask: url("../shapes masks/wave.svg");
   mask-size: cover;
-  -webkit-mask: url("shapes masks/wave.svg");
+  -webkit-mask: url("../shapes masks/wave.svg");
   -webkit-mask-size: cover;
 }
 
 .wave-border {
-  mask: url("shapes masks/wave-border.svg");
+  mask: url("../shapes masks/wave-border.svg");
   mask-size: cover;
-  -webkit-mask: url("shapes masks/wave-border.svg");
+  -webkit-mask: url("../shapes masks/wave-border.svg");
   -webkit-mask-size: cover;
 }
 
 .diamond-shape {
-  mask: url("shapes masks/diamond.svg");
+  mask: url("../shapes masks/diamond.svg");
   mask-size: cover;
-  -webkit-mask: url("shapes masks/diamond.svg");
+  -webkit-mask: url("../shapes masks/diamond.svg");
   -webkit-mask-size: cover;
   
 }
 
 .diamond-border {
-	mask: url("shapes masks/diamond-border.svg");
+	mask: url("../shapes masks/diamond-border.svg");
   mask-size: cover;
-	-webkit-mask: url("shapes masks/diamond-border.svg");
+	-webkit-mask: url("../shapes masks/diamond-border.svg");
   -webkit-mask-size: cover;
 }
 
 .ellipse-shape {
-  mask: url("shapes masks/ellipse.svg");
+  mask: url("../shapes masks/ellipse.svg");
   mask-size: cover;
-  -webkit-mask: url("shapes masks/ellipse.svg");
+  -webkit-mask: url("../shapes masks/ellipse.svg");
   -webkit-mask-size: cover;
 }
 
 .ellipse-border {
-	mask: url("shapes masks/ellipse-border.svg");
+	mask: url("../shapes masks/ellipse-border.svg");
   mask-size: cover;
-	-webkit-mask: url("shapes masks/ellipse-border.svg");
+	-webkit-mask: url("../shapes masks/ellipse-border.svg");
   -webkit-mask-size: cover;
 }
 
@@ -323,136 +323,4 @@ html, body {
 	animation-delay: 0.4s;
 }
 
-/* ------------- Resize to different devices -------------------- */
-/* ------------- Resize desktops -------------- */
-@media (min-width:  1201px) {
-	#title {
-		height: 15vh;
-	}
 
-	#not-title {
-		height: 85vh;
-	}
-
-	#homepage {
-		flex-direction: row;
-		width: 70%;
-	}
-
-	#get-players-names-table {
-	gap: 1rem;
-	width: 50%;
-	height: 90%;
-	}
-	
-	#game-board {
-	flex-direction: row;
-	width: 100%;
-	}
-
-	#game-cards {
-		grid-template-columns: repeat(4, 1fr);
-		grid-template-rows: repeat(3, 1fr);
-		grid-gap: 0rem;
-		text-align: center;
-		align-items: center;
-		height: 90%;
-		width: 50%;
-	}
-
-	#game-results {
-	gap: 1.4rem;
-	width: 50%;
-	height: 90%;
-	font-size: 3rem;
-  }
-}
-
-/* ------------- Resize phones -------------- */
-@media (max-width:  1200px) {
-	#title {
-		height: 10vh;
-		font-size: 3.5rem;
-	}
-
-	#not-title {
-		height: 90vh;
-	}
-
-	.buttons {
-		font-size: 1.5rem;
-	}
-
-	#homepage {
-		flex-direction: column;
-		width: 80%;
-	}
-
-	#get-players-names-table {
-	gap: 0.5rem;
-	width: 90%;
-	height: 80%;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	}
-
-	.multiple-players-table-txt {
-	font-size: 1.5rem;
-	text-align: center;
-	position: relative;
-	margin-top: 30px;
-	}
-
-	.multiple-players-table-input {
-	width: 80%;
-	font-size: 1.6rem;
-	text-align: center;
-
-	border: 0px solid grey;
-	border-radius: 10px;
-	}
-
-	.game-data-title {
-		font-size: 2.2rem;
-	}
-
-	.game-data {
-		font-size: 1.5rem;
-		height: 20%;
-	}
-
-	#game-board {
-		flex-direction: column;
-		width: 90vh;
-	}
-
-	#setsDisplayer {
-		grid-gap: 0.5rem;
-	}
-
-	#game-cards {
-		grid-template-columns: repeat(3, 1fr);
-		grid-template-rows: repeat(4, 1fr);
-		grid-gap: 0.7rem;
-		height: 60%;
-		width: 100%;
-	}
-
-	.card {
-	border-radius: 20px;
-	}
-
-	.shapes {
-	width: 30%;
-	/* height: 60%; */
-	}
-
-	#game-results {
-		font-size: 3.2rem;
-		gap: 1.5rem;
-		width: 90%;
-		height: 80%;
-		border-radius: 25px;
-	}
-}
